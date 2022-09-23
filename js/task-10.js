@@ -12,6 +12,19 @@
 // Создай функцию destroyBoxes(), которая очищает содержимое div#boxes, тем самым удаляя все созданные элементы.
 
 function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
+
+const inputAmount = number => {
+  const elements = [];
+  for (let i = 0; i < number; i++) {
+    const div = document.createElement('div');
+    div.height = `${size += 10}px`;
+    div.weight = `${size += 10}px`;
+    elements.push(div)
+  }
+  return elements;
+}
+const size = 30;
+
 
