@@ -11,9 +11,9 @@
 
 // Создай функцию destroyBoxes(), которая очищает содержимое div#boxes, тем самым удаляя все созданные элементы.
 
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-}
+const getRandomHexColor = () => `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+const inputNum = document.querySelector('#controls>input');
+const boxes = document.querySelector('#boxes');
 
 const inputAmount = number => {
   const elements = [];
@@ -21,10 +21,14 @@ const inputAmount = number => {
     const div = document.createElement('div');
     div.height = `${size += 10}px`;
     div.weight = `${size += 10}px`;
-    elements.push(div)
+    div.background = getRandomHexColor;
+    elements.push(div);
   }
   return elements;
-}
+};
 const size = 30;
+document.querySelector('[data-create]');
+document.addEventListener('click', () => boxes.append(...createBoxes(inputNum.value)));
+document.querySelector('[data-destroy]').addEventListener('click', () => (boxes.innerHTML = ''));
 
 
